@@ -71,6 +71,7 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
+    /*
     @StreamListener(KafkaProcessor.INPUT)
     public void whenShipped_then_UPDATE_3(@Payload Shipped shipped) {
         try {
@@ -89,6 +90,7 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
+    */
     @StreamListener(KafkaProcessor.INPUT)
     public void whenPaymentConfirmed_then_UPDATE_4(@Payload PaymentConfirmed paymentConfirmed) {
         try {
