@@ -53,4 +53,21 @@ public class PolicyHandler {
         
     }
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverReviewWrited_OrderStatus(@Payload ReviewWrited reviewWrited){
+
+        if(reviewWrited.isMe()){
+            System.out.println("##### listener OrderStatus : " + reviewWrited.toJson());
+
+           Optional<Order> orderOptional = orderRepository.findById(reviewWrited.getOrderId());
+            if( orderOptional.isPresent()) {
+                Order order = orderOptional.get();
+                order.setStatus("reviewWrited");
+
+                orderRepository.save(order);
+            }
+        }
+    }
+
+
 }

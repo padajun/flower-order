@@ -12,6 +12,7 @@
 /home/project/flower-order/src/main/java/awslv2flower/OrderController.java
 /home/project/flower-order/src/main/java/awslv2flower/external/PaymentService.java
 /home/project/flower-order/src/main/java/awslv2flower/OrderRepository.java
+/home/project/flower-order/src/main/java/awslv2flower/ReviewWrited.java
 /home/project/flower-order/src/main/java/awslv2flower/MypageViewHandler.java
 /home/project/flower-order/src/main/java/awslv2flower/ShipCancelled.java
 /home/project/flower-order/src/main/java/awslv2flower/OrderCanceled.java

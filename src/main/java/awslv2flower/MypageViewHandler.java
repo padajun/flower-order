@@ -71,17 +71,16 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
-    /*
+    
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenShipped_then_UPDATE_3(@Payload Shipped shipped) {
+    public void whenReviewWirited_then_UPDATE_3(@Payload ReviewWrited reviewWrited) {
         try {
-            if (shipped.isMe()) {
+            if (reviewWrited.isMe()) {
                 // view 객체 조회
-                Optional<Mypage> mypageOptional = mypageRepository.findById(shipped.getOrderId());
-                if( mypageOptional.isPresent()) {
-                    Mypage mypage = mypageOptional.get();
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setStatus(shipped.getStatus());
+                List<Mypage> mypageList = mypageRepository.findByOrderId(reviewWrited.getOrderId());
+                for( Mypage mypage : mypageList) {
+                    
+                    mypage.setStatus(reviewWrited.getStatus());
                     // view 레파지 토리에 save
                     mypageRepository.save(mypage);
                 }
@@ -90,7 +89,8 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
-    */
+    
+
     @StreamListener(KafkaProcessor.INPUT)
     public void whenPaymentConfirmed_then_UPDATE_4(@Payload PaymentConfirmed paymentConfirmed) {
         try {
