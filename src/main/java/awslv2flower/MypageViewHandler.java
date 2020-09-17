@@ -81,6 +81,7 @@ public class MypageViewHandler {
                 for( Mypage mypage : mypageList) {
                     
                     mypage.setStatus(reviewWrited.getStatus());
+                    mypage.setReviewMemo(reviewWrited.getReviewMemo());
                     // view 레파지 토리에 save
                     mypageRepository.save(mypage);
                 }

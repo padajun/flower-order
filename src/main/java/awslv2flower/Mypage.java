@@ -15,6 +15,7 @@ public class Mypage {
         private Integer qty;
         private String status;
         private Long price;
+        private String reviewMemo;
 
 
         public Long getId() {
@@ -59,5 +60,11 @@ public class Mypage {
         public void setPrice(Long price) {
             this.price = price;
         }
+          public String getReviewMemo() {
+            return reviewMemo;
+        }
 
+        public void setReviewMemo(String reviewMemo) {
+            this.reviewMemo = reviewMemo;
+        }
 }
